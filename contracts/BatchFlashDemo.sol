@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: agpl-3.0
-pragma solidity 0.6.12;
+pragma solidity 0.7.6
 
 import { FlashLoanReceiverBase } from "FlashLoanReceiverBase.sol";
 import { ILendingPool, ILendingPoolAddressesProvider, IERC20 } from "Interfaces.sol";
@@ -32,7 +32,7 @@ contract BatchFlashDemo is FlashLoanReceiverBase, Ownable {
     address kovanLink = 0xAD5ce863aE3E4E9394Ab43d4ba0D80f419F61789;
     
     // intantiate lending pool addresses provider and get lending pool address
-    constructor(ILendingPoolAddressesProvider _addressProvider) FlashLoanReceiverBase(_addressProvider) public {
+    constructor(ILendingPoolAddressesProvider _addressProvider) FlashLoanReceiverBase(_addressProvider) {
         provider = _addressProvider;
         lendingPoolAddr = provider.getLendingPool();
     }

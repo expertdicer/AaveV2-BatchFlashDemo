@@ -21,14 +21,9 @@ async function main() {
 
     var networkName = hre.network.name;
 
-    priceOracle = await getPriceOracleConfig(networkName);
-    console.log('======> priceOracle: ', priceOracle.address)
-
-    reserves = await getReserveConfig(networkName);
-    console.log('======> reserves: ', reserves)
-
-    poolManagementConfig = await getPoolManagementConfig(networkName);
-    console.log('======> poolManagementConfig: ', poolManagementConfig)
+    const BatchFlashDemo = await hre.ethers.getContractFactory("BatchFlashDemo");
+    var batchFlashDemo = await BatchFlashDemo.deploy(assets, sources, fallbackOracle, weth);
+    await batchFlashDemo.deployed();
 
 }
 
