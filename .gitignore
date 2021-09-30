@@ -1,0 +1,10 @@
+node_modules
+
+Hardhat files
+.DS_Store
+cache
+/artifacts
+
+hardhat.config.js
+secrets.json
+package-lock.json
